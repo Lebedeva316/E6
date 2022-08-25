@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title> Simple SignUp/SignIn app</title>
+    </head>
+    <body>
+        <div>
+            <h1>Страница {{request.user.username}}</h1>
+        </div>
+        {% block content %}
+        <p> <img src="{{MEDIA_URL}}{{ request.user.avatar.url}}" width="200" height="180"> </p>
+        <p> {{ request.user.about }} </p>
+        <button><a href="{% url 'edit_user' user.id %}">Редактировать</button>
+        {% endblock %}
+        <div>
+            {% load static %}
+
+        <button class="custom-btn btn-7"> <a href="/sign/logout">Выход</a></button>
+            <br>
+        <button class="custom-btn btn-7"> <a href="/chat/{{request.user.username}}"> Мои сообщения </a></button>
+            <br>
+        <button class="custom-btn btn-7"> <a href="/chat/users"> Все пользователи </a></button>
+            <br>
+        <button class="custom-btn btn-7"> <a href="/chat/roomcreated"> Создать комнату </a></button>
+            <br>
+        <button class="custom-btn btn-7"> <a href="/chat/rooms"> Список комнат </a></button>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<p>{{ roomm.name }}</p>
+<p>{{ room.roomUsers }}</p>
+{% for message in messages %}
+   <p> {{message.author}} </p>
+   <p> {{message.room}} </p>
+   <p> {{message.text}} </p>
+   <p> {{message.date}} </p>
+   <p> {{message.time}} </p>
+
+{% endfor %}
+
+</body>
+</html>

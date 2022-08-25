@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+<button> <a href="/sign/logout"> Выход </a></button>
+<button> <a href="/"> Моя страница </a></button>
+{% for user in users %}
+    <p> <img src="{{MEDIA_URL}}{{ user.avatar.url}}" width="300" height="300"> </p>
+   <p> {{user.username}} </p>
+    <p> {{user.about}} </p>
+    <button> <a href="/chat/{{user.username}}"> Отправить сообщение </a></button>
+{% endfor %}
+
+</body>
+</html>

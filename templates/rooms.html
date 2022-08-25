@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rooms</title>
+</head>
+<body>
+<button> <a href="/"> Моя страница </a></button>
+{% for room in rooms %}
+<p>{{room.name}}</p>
+<p>{{room.date}}</p>
+Участники комнаты:
+{% for roomUsers in room.roomUsers.all %}
+<p>{{roomUsers}}</p>
+{% endfor %}
+<button> <a href="/chat/{{room.name}}"> Войти в комнату </a></button>
+{% endfor %}
+<button> <a href="/"> Моя страница </a></button>
+</body>
+</html>

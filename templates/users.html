@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% load static %}
+
+
+{% for user in users %}
+<div class="post-wrap">
+    <div class="post-item">
+        <div class="item-content">
+            <div class="item-icon group">
+                <img src="{{MEDIA_URL}}{{ user.avatar.url}}" width="300" height="300">
+            </div>
+            <div class="item-body">
+                <h3>{{user.username}}</h3>
+                <p>{{user.about}}.</p>
+            </div>
+            <div class="item-footer">
+                <a href="/chat/{{user.username}}" class="link"><span>Написать {{user.username}}</span></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+

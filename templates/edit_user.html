@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% load static %}
+        <link href="{% static 'css/button.css' %}" rel="stylesheet" />
+<body>
+{% block content %}
+<h3>Заполните поля</h3>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }} <!-- Теперь нам нужна только готовая форма и кнопка -->
+    <input class="custom-btn btn-7" type="submit" value="Сохранить">
+</form>
+{% endblock content %}
+</body>
+</html>
+

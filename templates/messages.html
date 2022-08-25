@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>messages</title>
+</head>
+<body>
+
+
+{% for message in messages %}
+   <p> {{message.author}} </p>
+   <p> {{message.room}} </p>
+   <p> {{message.text}} </p>
+   <p> {{message.date}} </p>
+   <p> {{message.time}} </p>
+
+{% endfor %}
+</body>
+</html>
